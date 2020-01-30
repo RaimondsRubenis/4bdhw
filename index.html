@@ -7,8 +7,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="styles/main.css">
 <body>
-  <button type="button" onclick="sortData('title')">Sort by Title</button>
-  <button type="button" onclick="sortData('text')">Sort by Text</button>
+  <button type="button" class="sort-button" onclick="sortData('title')">Sort by Title</button>
+  <button type="button" class="sort-button" onclick="sortData('text')">Sort by Text</button>
   <div class="main">
   </div>
   <footer>
@@ -17,14 +17,13 @@
       <input type="text" name="title" value="" required>
       <label for="title">Text:</label>
       <input type="text" name="text" value="" required>
-      <br>
       <label for="title">Font Size:</label>
       <input type="number" name="fontSize" value="" required>
+      <br>
       <label for="title">Text color:</label>
       <input type="color" name="color">
       <label for="title">Background color:</label>
       <input type="color" name="backgroundColor" value="#ffffff">
-      <br>
       <label for="pic">Picture:</label>
       <input type="text" name="pic" value="" list="pics">
       <datalist id="pics">
@@ -32,9 +31,10 @@
           <option value="https://images.unsplash.com/photo-1580244659964-dba76bd98929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60">
             <option value="https://images.unsplash.com/photo-1558980394-34764db076b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60">
             </datalist>
-      <input type="submit" name="" value="Submit">
-    </form>
-  </footer>
-</body>
-<script src="scripts/main.js"></script>
-</html>
+            <br>
+            <input type="submit" name="" value="Submit">
+          </form>
+        </footer>
+      </body>
+      <script src="scripts/main.js"></script>
+      </html>

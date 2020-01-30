@@ -5,7 +5,7 @@ var data = [
     "pic": "https://images.unsplash.com/photo-1580200346290-a0bd91f0debd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "title": "Green trees",
     "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "fontSize": "20px",
+    "fontSize": "20",
     "textColor": "black",
     "backgroundColor": "#32a852",
   },
@@ -14,7 +14,7 @@ var data = [
     "pic": "https://images.unsplash.com/photo-1580231679388-43b7bf42f7c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "title": "Sahara",
     "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "fontSize": "19px",
+    "fontSize": "19",
     "textColor": "black",
     "backgroundColor": "#b594e3",
   },
@@ -23,14 +23,15 @@ var data = [
     "pic": "https://images.unsplash.com/photo-1580237995396-a21928e71e63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "title": "Blue sea",
     "text": " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "fontSize": "",
+    "fontSize": "30",
     "textColor": "black",
     "backgroundColor": "#fffbd6",
   }
 ];
+
 var reverse = [1, -1];  // Array to toggle reverse (Initial sort is from end to start)
 
-$( document ).ready(function() {
+$(document).ready(function() {
   loadItems();
 });
 
@@ -45,7 +46,7 @@ function createListItems(id, pic, title, text, color, fontSize, textColor) {
   item = $('.main').append(
     $('<div>').addClass('section').append(
       $('<div>').addClass('container').css({"background-color": color}).append(
-        $('<a>').attr({onclick: "remove(this)", id: id}).text("X"), $('<img>').attr('src', pic), $('<h1>').append(title), $('<p>').append(text).css({"font-size": fontSize, "color": textColor})
+        $('<a>').attr({onclick: "remove(this)", class: "close-button", id: id}).text("X"), $('<img>').attr('src', pic), $('<h1>').append(title).attr("class", "title"), $('<p>').append(text).css({"font-size": fontSize+"px", "color": textColor}).attr("class", "block-text"),
       )
     )
   );
@@ -56,7 +57,6 @@ function remove(e) {
   data = data.filter(function( obj ) {
     return obj.id != toDelete;
   }, loadItems());
-
 }
 
 // http://css-tricks.com/snippets/jquery/serialize-form-to-json/

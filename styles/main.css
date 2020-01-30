@@ -1,25 +1,16 @@
-
 img {
   width: 400px;
 }
 
-p {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
-  max-width: 30%;
-  text-align: right;
-}
-
 footer {
-  background-color: lightgrey;
-  height: 150px;
+  background-color: #e6e6e6;
+  height: auto;
   width: 100%;
+  padding: 10px;
   /* Gadījumā ja nu pievienošanas interfeisam vienmēr būtu jābūt redzamam */
   /* position: fixed;
   left: 0;
   bottom: 0; */
-
 }
 
 input {
@@ -27,49 +18,90 @@ input {
   margin: 5px;
 }
 
-button {
-  padding: 10px;
-  margin-bottom: 10px;
+input[type=submit] {
+  width: auto;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-a {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  background-color: red;
+.sort-button {
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .container {
   padding: 20px;
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items:center;
+
 }
 
-/* .sort {
-  width: 50% !important;
-  background-color: lightgreen !important;
-  margin: 5px;
-  position: relative !important;
-  top: auto !important;
-  right: auto !important;
-  padding: 10px;
-} */
+.title {
+  padding: 20px;
+  width: 20%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: #ff1a1a;
+}
+
+.block-text {
+  max-width: 30%;
+}
 
 @media only screen and (max-width: 900px) {
   img {
     width: 100%;
   }
 
+  footer {
+    padding: 0;
+    text-align: center;
+  }
+
+  input {
+    width: 50%;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  input[type=submit] {
+    width: 70%;
+  }
+
+  label {
+    padding-top: 10px;
+    display: block;
+  }
+
+  .sort-button {
+    width: 100%;
+  }
+
   .container {
-    position: relative;
     display: block;
     justify-content: auto;
   }
 
-  p {
+  .title {
+    width: auto;
+  }
+
+  .block-text {
     position: relative;
     text-align: center;
     max-width: 100%;
+    right: auto;
   }
+
 }
